@@ -1,0 +1,45 @@
+[user]
+    email = name@domain.com
+    name = Your Name
+[core]
+    editor = vim
+    autocrlf = false
+[push]
+    default = upstream
+[merge]
+    defaultToUpstream = true
+[color]
+    diff = auto
+    status = auto
+    branch = true
+    interactive = auto
+    ui = true
+    pager = true
+[color "diff"]
+    new = green bold
+    whitespace = red reverse
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+[color "branch"]
+    current = green bold
+    local = green
+    remote = blue
+[color "status"]
+    added = green
+    changed = yellow
+    untracked = cyan
+[alias]
+    aliases = config --get-regexp ^alias
+    c = commit -m
+    co = checkout
+    sw = switch
+    s = status
+    inc = !git fetch && git log --oneline ..@{u}
+    out = log --oneline @{u}..
+    l = log --all --decorate --graph --abbrev-commit --date=relative --name-status
+
+    bs = branch --sort=committerdate --format='%(committerdate:iso-local) %(color:green)(%(committerdate:relative))%(color:reset) %(color:yellow)%(refname:short)%(color:reset) %(HEAD) %(color:red)%(authorname)%(color:reset)'
+
+    bsr = branch -r --sort=committerdate --format='%(committerdate:iso-local) %(color:green)(%(committerdate:relative))%(color:reset) %(color:blue)%(refname:short)%(color:reset) %(HEAD) %(color:red)%(authorname)%(color:reset)'
+
